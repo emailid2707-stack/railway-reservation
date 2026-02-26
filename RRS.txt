@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int seats = 5;  
+    int choice;
+
+    while(1) {
+        printf("\n--- Railway Reservation System ---\n");
+        printf("1. Check Available Seats\n");
+        printf("2. Book Ticket\n");
+        printf("3. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        if(choice == 1) {
+            printf("Available Seats: %d\n", seats);
+        }
+        else if(choice == 2) {
+            if(seats > 0) {
+                seats--;
+                printf("Ticket Booked Successfully!\n");
+                printf("Remaining Seats: %d\n", seats);
+            } else {
+                printf("Sorry! No Seats Available.\n");
+            }
+        }
+        else if(choice == 3) {
+            printf("Thank You!\n");
+            break;
+        }
+        else {
+            printf("Invalid Choice!\n");
+        }
+    }
+
+    return 0;
+}
